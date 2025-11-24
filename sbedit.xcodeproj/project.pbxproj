@@ -20,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		5F89593E2ECB10F800DDDAFC /* sbedit */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sbedit; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F8BD3142ED4605700CB6272 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		5F8BD3152ED4605E00CB6272 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -44,6 +46,8 @@
 		5F8959352ECB10F800DDDAFC = {
 			isa = PBXGroup;
 			children = (
+				5F8BD3152ED4605E00CB6272 /* README.md */,
+				5F8BD3142ED4605700CB6272 /* TODO.md */,
 				5F8959402ECB10F800DDDAFC /* sbedit */,
 				5F89593F2ECB10F800DDDAFC /* Products */,
 			);
