@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+BASEDIR=$(dirname $0)
+FOLDERNAME="$(basename "$BASEDIR")"
+
+PACKAGENAME="${FOLDERNAME%-*}"
+VERSION="${FOLDERNAME##*-}"
+
+echo "Building package $PACKAGENAME version $VERSION"
+
+COMPONENT="$PACKAGENAME-component.plist"
+IDENTIFIER="ch.iconus.fabien.$(echo "$PACKAGENAME" | tr -d ' ')"
+
+cd $BASEDIR
+
+/usr/bin/pkgbuild --analyze --root Tree "$COMPONENT"
+
+/usr/bin/plutil -replace BundleIsRelocatable -bool NO "$COMPONENT"
+
+/usr/bin/pkgbuild --root Tree --install-location / --identifier "$IDENTIFIER" --version "$VERSION" --component-plist "$COMPONENT" "$PACKAGENAME-$VERSION.pkg"
+
+exit $?
